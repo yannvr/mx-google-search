@@ -1,0 +1,22 @@
+{
+  "name": "mx-google-search",
+  "description": "Multi threaded google search",
+  "main": "app.es6",
+  "authors": [
+    "Yann VR"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yannvr/mx-google-search",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bacon": "~0.7.78",
+    "zepto": "~1.1.6"
+  }
+}
