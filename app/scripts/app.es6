@@ -2,17 +2,12 @@ google.load('search', '1');
 
 var MXSearch = function () {
     var currentSearch = 'Shaun White',
-        searchers = new Set();
-    window.searchControl = new google.search.SearchControl();
+        searchers = new Set(),
+        searchControl = new google.search.SearchControl();
 
-    // Create a search control
-    searchControl.addSearcher(new google.search.ImageSearch());
-
-    // tell the searcher to draw itself and tell it where to attach
-    searchControl.draw(document.getElementById('searchcontrol'));
-
-    // execute an inital search
-    searchControl.execute(currentSearch);
+    searchControl.addSearcher(new google.search.ImageSearch()); // Create a search control
+    searchControl.draw(document.getElementById('searchcontrol')); // tell the searcher to draw itself and tell it where to attach
+    searchControl.execute(currentSearch); // execute an inital search
 
     function initSearchControl(e) {
         if (e.target.checked) {

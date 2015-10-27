@@ -1,0 +1,14 @@
+.gsc-control {
+    width: auto !important;
+}
+
+.gsc-resultsbox-visible {
+    display: flex !important;
+    flex-direction: row !important;
+    align-content: stretch !important;
+    align-items: flex-start !important;
+}
+
+.gsc-results {
+    flex: 1 0 auto !important;
+}
