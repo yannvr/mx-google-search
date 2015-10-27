@@ -1,19 +1,20 @@
 google.load('search', '1');
-const MXSearch = function () {
-    const searchers = new Set();
+
+var MXSearch = function () {
+    var currentSearch = 'Shaun White',
+        searchers = new Set();
+    window.searchControl = new google.search.SearchControl();
 
     // Create a search control
-    let searchControl = new google.search.SearchControl();
-
     searchControl.addSearcher(new google.search.ImageSearch());
 
     // tell the searcher to draw itself and tell it where to attach
     searchControl.draw(document.getElementById('searchcontrol'));
 
     // execute an inital search
-    searchControl.execute('Shaun White');
+    searchControl.execute(currentSearch);
 
-    const initSearchControl = function (e) {
+    function initSearchControl(e) {
         if (e.target.checked) {
             searchers.add(e.target.id);
         } else {
@@ -26,12 +27,14 @@ const MXSearch = function () {
             console.log(`Add searcher: ${ searcher }`);
         });
         searchControl.draw(document.getElementById('searchcontrol'));
+        $('.gsc-input input').val(currentSearch);
+        executeSearch(currentSearch);
         createObserver().onValue(executeSearch);
-    };
+    }
 
-    const executeSearch = function (val) {
+    function executeSearch(val) {
         searchControl.execute(val);
-    };
+    }
 
     function createObserver() {
         return $(searchControl.input)
