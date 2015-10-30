@@ -1,3 +1,5 @@
 # mx-google-search
 
-Reactive multi threaded google search 
+Single window multi threaded google search.
+
+``gulp server``
