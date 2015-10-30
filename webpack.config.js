@@ -9,7 +9,7 @@ module.exports = {
         loaders: [
             { test: /\.es6$/, loader: 'babel-loader' },
             { test: /\.css$/, exclude: /\.useable\.css$/, loader: "style!css" },
-            { test: /\.useable\.css$/, loader: "style/useable!css" }
+            //{ test: /\.useable\.css$/, loader: "style/useable!css" }
         ]
     }
 };
