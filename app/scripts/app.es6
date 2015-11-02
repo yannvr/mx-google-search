@@ -5,6 +5,8 @@ function MXSearch () {
         searchers = new Set(['ImageSearch']),
         searchControl = new google.search.SearchControl()
 
+    const DEBOUNCE_DELAY = 500
+
     searchControl.addSearcher(new google.search.ImageSearch()) // Create a search control
     searchControl.draw(document.getElementById('searchcontrol')) // tell the searcher to draw itself and tell it where to attach
     searchControl.execute(currentSearch) // execute an initial search
@@ -17,7 +19,7 @@ function MXSearch () {
         return $(searchControl.input)
             .asEventStream('keyup')
             .map(e => e.target.value)
-            .debounce(300)
+            .debounce(DEBOUNCE_DELAY)
             .filter(v => v.length > 2)
     }
 
@@ -41,7 +43,7 @@ function MXSearch () {
     function initInputStream() {
         $(searchControl.input).asEventStream('keyup')
             .map(e => e.target.value)
-            .debounce(300)
+            .debounce(DEBOUNCE_DELAY)
             .filter(v => v.length > 2)
             .onValue((v) => { currentSearch = v; searchControl.execute(v) })
     }

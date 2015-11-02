@@ -1,0 +1,33 @@
+body
+  font-family: helvetica
+  font-size: 0.9em
+
+.search-type
+  float: left
+  label
+    margin-right: 10px
+
+
+// Following are google threads (search engin type results) therefore you existing styles need to be overriden
+
+.gsc-resultsbox-visible
+  display: flex !important;
+  flex-direction: row !important;
+  align-content: stretch !important;
+  align-items: flex-start !important;
+
+.gsc-results
+  //flex: 1 0 auto !important
+  flex: 1 !important
+  transition: all .25s ease-in !important
+  top: 30px
+
+.gsc-control
+  top: 5px
+  width: auto !important
+  .gsc-input input
+    font-size: 1.2em
+    padding-top: 10px
+    border: none
+  .gsc-search-button
+    display: none
